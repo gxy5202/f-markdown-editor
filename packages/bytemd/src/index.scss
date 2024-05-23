@@ -1,6 +1,7 @@
 @import 'codemirror-ssr/lib/codemirror.css';
 @import 'tippy.js/dist/tippy.css';
 @import 'tippy.js/themes/light-border.css';
+@import './github-markdown-css/github-markdown.css';
 @import '@primer/css/support/variables/color-system.scss';
 
 $border-color: $gray-200;
@@ -132,7 +133,7 @@ $max-width: 800px;
   }
 
   &-body {
-    height: calc(100% - 33px - 25px);
+    height: 100%;
     overflow: auto;
   }
 
@@ -149,7 +150,7 @@ $max-width: 800px;
         color: $gray-400;
       }
       .CodeMirror-lines {
-        max-width: $max-width;
+        // max-width: $max-width;
         margin: 0 auto;
         padding: 16px 0;
       }
@@ -166,7 +167,7 @@ $max-width: 800px;
     height: 100%;
     overflow: auto;
     .markdown-body {
-      max-width: $max-width;
+      // max-width: $max-width;
       margin: 0 auto;
       padding: 16px 4%;
     }

@@ -18,6 +18,7 @@
   export let locale: BytemdLocale
   export let actions: BytemdAction[]
   export let rightAfferentActions: BytemdAction[]
+  export let previewMode: 'auto' | 'preview'
 
   interface RightAction extends BytemdAction {
     active?: boolean
@@ -30,28 +31,28 @@
   $: previewActive = activeTab === 'preview'
 
   $: rightActions = [
-    {
-      title: tocActive ? locale.closeToc : locale.toc,
-      icon: icons.AlignTextLeftOne,
-      handler: {
-        type: 'action',
-        click() {
-          dispatch('click', 'toc')
-        },
-      },
-      active: tocActive,
-    },
-    {
-      title: helpActive ? locale.closeHelp : locale.help,
-      icon: icons.Helpcenter,
-      handler: {
-        type: 'action',
-        click() {
-          dispatch('click', 'help')
-        },
-      },
-      active: helpActive,
-    },
+    // {
+    //   title: tocActive ? locale.closeToc : locale.toc,
+    //   icon: icons.AlignTextLeftOne,
+    //   handler: {
+    //     type: 'action',
+    //     click() {
+    //       dispatch('click', 'toc')
+    //     },
+    //   },
+    //   active: tocActive,
+    // },
+    // {
+    //   title: helpActive ? locale.closeHelp : locale.help,
+    //   icon: icons.Helpcenter,
+    //   handler: {
+    //     type: 'action',
+    //     click() {
+    //       dispatch('click', 'help')
+    //     },
+    //   },
+    //   active: helpActive,
+    // },
     {
       title: writeActive ? locale.exitWriteOnly : locale.writeOnly,
       icon: icons.LeftExpand,
@@ -76,26 +77,26 @@
       active: previewActive,
       hidden: !split,
     },
-    {
-      title: fullscreen ? locale.exitFullscreen : locale.fullscreen,
-      icon: fullscreen ? icons.OffScreen : icons.FullScreen,
-      handler: {
-        type: 'action',
-        click() {
-          dispatch('click', 'fullscreen')
-        },
-      },
-    },
-    {
-      title: locale.source,
-      icon: icons.GithubOne,
-      handler: {
-        type: 'action',
-        click() {
-          window.open('https://github.com/bytedance/bytemd')
-        },
-      },
-    },
+    // {
+    //   title: fullscreen ? locale.exitFullscreen : locale.fullscreen,
+    //   icon: fullscreen ? icons.OffScreen : icons.FullScreen,
+    //   handler: {
+    //     type: 'action',
+    //     click() {
+    //       dispatch('click', 'fullscreen')
+    //     },
+    //   },
+    // },
+    // {
+    //   title: locale.source,
+    //   icon: icons.GithubOne,
+    //   handler: {
+    //     type: 'action',
+    //     click() {
+    //       window.open('https://github.com/bytedance/bytemd')
+    //     },
+    //   },
+    // },
     ...rightAfferentActions,
   ] as RightAction[]
 
@@ -226,6 +227,10 @@
 
   onMount(() => {
     init()
+
+    if (previewMode === 'preview') {
+      dispatch('tab', 'preview')
+    }
   })
 
   function handleClick(e: MouseEvent | KeyboardEvent) {

@@ -312,7 +312,7 @@ importers:
 
   packages/vue-next:
     dependencies:
-      bytemd:
+      f-markdown-editor:
         specifier: workspace:*
         version: link:../bytemd
     devDependencies:
@@ -325,40 +325,16 @@ importers:
 
   playground:
     dependencies:
-      '@bytemd/plugin-breaks':
-        specifier: workspace:*
-        version: link:../packages/plugin-breaks
-      '@bytemd/plugin-frontmatter':
-        specifier: workspace:*
-        version: link:../packages/plugin-frontmatter
-      '@bytemd/plugin-gemoji':
-        specifier: workspace:*
-        version: link:../packages/plugin-gemoji
       '@bytemd/plugin-gfm':
-        specifier: workspace:*
-        version: link:../packages/plugin-gfm
+        specifier: ^1.21.0
+        version: 1.21.0(bytemd@1.21.0)
       '@bytemd/plugin-highlight':
-        specifier: workspace:*
-        version: link:../packages/plugin-highlight
-      '@bytemd/plugin-highlight-ssr':
-        specifier: workspace:*
-        version: link:../packages/plugin-highlight-ssr
-      '@bytemd/plugin-math':
-        specifier: workspace:*
-        version: link:../packages/plugin-math
-      '@bytemd/plugin-math-ssr':
-        specifier: workspace:*
-        version: link:../packages/plugin-math-ssr
-      '@bytemd/plugin-medium-zoom':
-        specifier: workspace:*
-        version: link:../packages/plugin-medium-zoom
-      '@bytemd/plugin-mermaid':
-        specifier: workspace:*
-        version: link:../packages/plugin-mermaid
+        specifier: ^1.21.0
+        version: 1.21.0(bytemd@1.21.0)
       '@sveltejs/vite-plugin-svelte':
         specifier: 2.0.4
         version: 2.0.4(svelte@3.57.0)(vite@4.2.1)
-      bytemd:
+      f-markdown-editor:
         specifier: workspace:*
         version: link:../packages/bytemd
       github-markdown-css:
@@ -975,6 +951,26 @@ packages:
 
   /@braintree/sanitize-url@6.0.2:
     resolution: {integrity: sha512-Tbsj02wXCbqGmzdnXNk0SOF19ChhRU70BsroIi4Pm6Ehp56in6vch94mfbdQ17DozxkL3BAVjbZ4Qc1a0HFRAg==}
+    dev: false
+
+  /@bytemd/plugin-gfm@1.21.0(bytemd@1.21.0):
+    resolution: {integrity: sha512-ZlrLa+Nl80gUDeC1hTnyRDfgJU3DGQVjQvX9rIIitUCler+KsAiagEnng6S/W2SZNpv+f8eWpVNL8KA8X3d7Tg==}
+    peerDependencies:
+      bytemd: ^1.5.0
+    dependencies:
+      bytemd: 1.21.0
+      remark-gfm: 3.0.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /@bytemd/plugin-highlight@1.21.0(bytemd@1.21.0):
+    resolution: {integrity: sha512-JM9rwzj9pFBXVwxmD9mgGIQPO4cTFVHvDhffS93IMK+tqvo0Vw76zDIqJWT3f421j8iNxffGsVQQs6389u3Z9A==}
+    peerDependencies:
+      bytemd: ^1.5.0
+    dependencies:
+      bytemd: 1.21.0
+      highlight.js: 11.7.0
     dev: false
 
   /@esbuild/android-arm64@0.17.14:
@@ -2912,6 +2908,32 @@ packages:
     resolution: {integrity: sha512-NNiBxKgxybMBtWdmvx7ZITJi4ZG+CYUgwOSZTfqB1qogkRHrhbQE/R2r5Fh94X+InN5MCYz6SvB/ejHMj/HbsQ==}
     engines: {node: '>=10'}
     dev: true
+
+  /bytemd@1.21.0:
+    resolution: {integrity: sha512-6nc658omwzcLdc/lT24w8G2x5pptZXiMyrQPbFuHwhYbmrLnsmKLm+9klsOx2/Lg2cYHYb2WzVh7zKZ9MZCVdg==}
+    dependencies:
+      '@popperjs/core': 2.11.7
+      '@types/codemirror': 5.60.7
+      '@types/hast': 2.3.4
+      '@types/lodash-es': 4.17.7
+      '@types/mdast': 3.0.11
+      codemirror-ssr: 0.65.0(@types/codemirror@5.60.7)
+      hast-util-sanitize: 4.1.0
+      lodash-es: 4.17.21
+      rehype-raw: 6.1.1
+      rehype-sanitize: 5.0.1
+      rehype-stringify: 9.0.3
+      remark-parse: 10.0.1
+      remark-rehype: 10.1.0
+      select-files: 1.0.1
+      tippy.js: 6.3.7
+      unified: 10.1.2
+      unist-util-visit: 4.1.2
+      vfile: 5.3.7
+      word-count: 0.2.2
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
 
   /cac@6.7.14:
     resolution: {integrity: sha512-b6Ilus+c3RrdDk+JhLKUAQfzzgLEPy6wcXqS7f/xe1EETvsDP6GORG7SFuOs6cID5YkqchW/LXZbX5bc8j7ZcQ==}
@@ -6258,8 +6280,8 @@ packages:
     resolution: {integrity: sha512-bz8hUWkMX7UcasORORcyBEsTKJ+dBiFwRPrm43hHC9NMRylIMLbfO5rwfeCN+UtY4AAi7s8WqXftb9eX6ZsqCg==}
     dependencies:
       escape-string-regexp: 5.0.0
-      unist-util-is: 5.1.1
-      unist-util-visit-parents: 5.1.0
+      unist-util-is: 5.2.0
+      unist-util-visit-parents: 5.1.3
     dev: false
 
   /mdast-util-from-markdown@1.2.0:
@@ -6290,7 +6312,7 @@ packages:
   /mdast-util-gfm-autolink-literal@1.0.2:
     resolution: {integrity: sha512-FzopkOd4xTTBeGXhXSBU0OCDDh5lUj2rd+HQqG92Ld+jL4lpUfgX2AT2OHAVP9aEeDKp7G92fuooSZcYJA3cRg==}
     dependencies:
-      '@types/mdast': 3.0.10
+      '@types/mdast': 3.0.11
       ccount: 2.0.1
       mdast-util-find-and-replace: 2.2.0
       micromark-util-character: 1.1.0
@@ -6299,7 +6321,7 @@ packages:
   /mdast-util-gfm-footnote@1.0.1:
     resolution: {integrity: sha512-p+PrYlkw9DeCRkTVw1duWqPRHX6Ywh2BNKJQcZbCwAuP/59B0Lk9kakuAd7KbQprVO4GzdW8eS5++A9PUSqIyw==}
     dependencies:
-      '@types/mdast': 3.0.10
+      '@types/mdast': 3.0.11
       mdast-util-to-markdown: 1.3.0
       micromark-util-normalize-identifier: 1.0.0
     dev: false
@@ -6307,7 +6329,7 @@ packages:
   /mdast-util-gfm-strikethrough@1.0.1:
     resolution: {integrity: sha512-zKJbEPe+JP6EUv0mZ0tQUyLQOC+FADt0bARldONot/nefuISkaZFlmVK4tU6JgfyZGrky02m/I6PmehgAgZgqg==}
     dependencies:
-      '@types/mdast': 3.0.10
+      '@types/mdast': 3.0.11
       mdast-util-to-markdown: 1.3.0
     dev: false
 
@@ -6324,7 +6346,7 @@ packages:
   /mdast-util-gfm-task-list-item@1.0.1:
     resolution: {integrity: sha512-KZ4KLmPdABXOsfnM6JHUIjxEvcx2ulk656Z/4Balw071/5qgnhz+H1uGtf2zIGnrnvDC8xR4Fj9uKbjAFGNIeA==}
     dependencies:
-      '@types/mdast': 3.0.10
+      '@types/mdast': 3.0.11
       mdast-util-to-markdown: 1.3.0
     dev: false
 
@@ -6368,12 +6390,12 @@ packages:
   /mdast-util-to-markdown@1.3.0:
     resolution: {integrity: sha512-6tUSs4r+KK4JGTTiQ7FfHmVOaDrLQJPmpjD6wPMlHGUVXoG9Vjc3jIeP+uyBWRf8clwB2blM+W7+KrlMYQnftA==}
     dependencies:
-      '@types/mdast': 3.0.10
+      '@types/mdast': 3.0.11
       '@types/unist': 2.0.6
       longest-streak: 3.0.1
       mdast-util-to-string: 3.1.0
       micromark-util-decode-string: 1.0.2
-      unist-util-visit: 4.1.1
+      unist-util-visit: 4.1.2
       zwitch: 2.0.2
     dev: false
 
@@ -8173,7 +8195,7 @@ packages:
   /remark-gfm@3.0.1:
     resolution: {integrity: sha512-lEFDoi2PICJyNrACFOfDD3JlLkuSbOa5Wd8EPt06HUdptv8Gn0bxYTdbU/XXQ3swAPkEaGxxPN9cbnMHvVu1Ig==}
     dependencies:
-      '@types/mdast': 3.0.10
+      '@types/mdast': 3.0.11
       mdast-util-gfm: 2.0.1
       micromark-extension-gfm: 2.0.1
       unified: 10.1.2

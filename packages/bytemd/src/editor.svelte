@@ -38,6 +38,7 @@
   export let uploadImages: Props['uploadImages'] = undefined
   export let overridePreview: Props['overridePreview'] = undefined
   export let maxLength: NonNullable<Props['maxLength']> = Infinity
+  export let previewMode: NonNullable<Props['previewMode']> = 'auto'
 
   $: mergedLocale = { ...zh_Hans, ...locale }
   const dispatch = createEventDispatcher<{ change: { value: string } }>()
@@ -352,6 +353,7 @@
     rightAfferentActions={actions.rightActions}
     locale={mergedLocale}
     actions={actions.leftActions}
+    previewMode={previewMode}
     on:key={(e) => {
       editor.setOption('keyMap', e.detail)
       editor.focus()
@@ -439,7 +441,7 @@
       />
     </div>
   </div>
-  <Status
+  <!-- <Status
     locale={mergedLocale}
     showSync={!overridePreview && split}
     value={debouncedValue}
@@ -452,5 +454,5 @@
       editor.scrollTo(null, 0)
       previewEl.scrollTo({ top: 0 })
     }}
-  />
+  /> -->
 </div>

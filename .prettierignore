@@ -1,0 +1,4 @@
+scripts/*.md
+CHANGELOG.md
+svelte
+dist

@@ -1,0 +1,8 @@
+# https://docs.netlify.com/configure-builds/file-based-configuration/#configuration-details
+# https://answers.netlify.com/t/using-pnpm-and-pnpm-workspaces/2759
+[build.environment]
+  NPM_FLAGS="--prefix=/dev/null"
+
+[build]
+  publish = "docs/.vitepress/dist"
+  command = "bash scripts/deploy.sh"

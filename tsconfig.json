@@ -1,0 +1,11 @@
+{
+    "files": [],
+    "references": [
+        {
+            "path": "packages\\bytemd"
+        },
+        {
+            "path": "packages\\vue-next"
+        }
+    ]
+}

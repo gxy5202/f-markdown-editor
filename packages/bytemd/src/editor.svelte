@@ -74,11 +74,11 @@
         preview = 'width:50%'
       }
     } else if (activeTab === 'preview') {
-      edit = 'display:none'
+      edit = 'width: 0'
       preview = `width:calc(100% - ${sidebar ? 280 : 0}px)`
     } else {
       edit = `width:calc(100% - ${sidebar ? 280 : 0}px)`
-      preview = 'display:none'
+      preview = 'width: 0'
       // TODO: use width:0 to make scroll sync work until
       // the position calculation improved (causes white screen after switching to editor only)
     }

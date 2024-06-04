@@ -17,6 +17,7 @@ onMounted(() => {
     target: contentRef.value!,
     props: {
       value: markdownText,
+      mode: 'auto',
       previewMode: 'preview',
       icons: [],
       plugins: [

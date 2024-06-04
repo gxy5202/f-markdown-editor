@@ -18,7 +18,7 @@
   export let locale: BytemdLocale
   export let actions: BytemdAction[]
   export let rightAfferentActions: BytemdAction[]
-  export let previewMode: 'auto' | 'preview'
+  export let previewMode: 'auto' | 'preview' | 'write'
 
   interface RightAction extends BytemdAction {
     active?: boolean
